@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Office Phone</title>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <ul class="nav fixed-bottom nav-pills nav-fill justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" id="aud" on-click="change(this.id)" href="#">Audio</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="text" on-click="change(this.id)" href="#">Text</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link disabled" on-click="change(this.id)" id="vid" href="#">Video</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" id="record" on-click="change(this.id)" href="#">Recordings</a>
+    </li>
+    </ul>
+  <!--  // Show yellow while, red if nobody picked up, green if it's ongoing , blue by default? -->
+    <div class="progress">
+        <div class="progress-bar progress-bar-striped bg-info" id="pbar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+    </div>
+
+    <br>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <form>
+              <div class="form-group">
+                <label for="formGroupExampleInput2">Call:</label>
+                <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Type Number">
+                <br>
+                <button type="button" class="btn btn-success" id="call">Call</button>
+                <button type="button" class="btn btn-danger" id="diconnect">Disconnect</button>
+              </div>
+          </form>
+        </div>
+      </div>
+      <div class="row">
+        <div id ="con" style="height:16em; overflow-x:auto; white-space: nowrap;">
+          <div class="h-100 d-inline-block card" id="con-1" onClick="reply_click(this.id)"  style="width: 10rem;float;">
+            <img class="card-img-top" src="2.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h3 class="card-title">Shreya</h3>
+            <h6 id="num-1">+123456789</h6>
+            </div>
+          </div>
+          <div class="h-100 d-inline-block card" id="con-2"  onClick="reply_click(this.id)" style="width: 10rem;float;">
+            <img class="card-img-top" src="2.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h3 class="card-title">Surya</h3>
+            <h6 class="num-2" >+173738399202</h6>
+            </div>
+          </div>
+          <div class="h-100 d-inline-block card" id="con-3" onClick="reply_click(this.id)"  style="width: 10rem;float;">
+            <img class="card-img-top" src="2.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h3 class="card-title">Anirudh</h3>
+            <h6 id="num-3" >+1272892922</h6>
+            </div>
+          </div>
+          <div class="h-100 d-inline-block card" id="con-4" onClick="reply_click(this.id)" style="width: 10rem;float;">
+            <img class="card-img-top" src="2.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h3 class="card-title">Mom</h3>
+            <h6 id="num-4" >+123456789</h6>
+            </div>
+          </div>
+          <div class="h-100 d-inline-block card" id="con-5" onClick="reply_click(this.id)" style="width: 10rem;float;">
+            <img class="card-img-top" src="2.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h3 class="card-title">Dad</h3>
+            <h6 id="num-5" >+123456789</h6>
+            </div>
+          </div>
+          <div class="h-100 d-inline-block card" id="con-6" onClick="reply_click(this.id)" style="width: 10rem;float;">
+            <img class="card-img-top" src="2.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h3 class="card-title">Anju</h3>
+            <h6 id="num-6">+123456789</h6>
+            </div>
+          </div>
+          <div class="h-100 d-inline-block card" id="con-7" onClick="reply_click(this.id)" style="width: 10rem;float;">
+            <img class="card-img-top" src="2.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h3 class="card-title">Anil</h3>
+            <h6 id="num-7" >+123456789</h6>
+            </div>
+          </div>
+          <div class="h-100 d-inline-block card" id="con-8" onClick="reply_click(this.id)"  style="width: 10rem; float;">
+            <img class="card-img-top" src="2.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h3 class="card-title">Swapnil</h3>
+            <h6 id="num-8" >+123456789</h6>
+            </div>
+          </div>
+          <div class="h-100 d-inline-block card" id="con-9" onClick="reply_click(this.id)"  style="width: 10rem; float;">
+            <img class="card-img-top" src="2.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h3 class="card-title">Sadhana</h3>
+            <h6 id="num-9" >+123456785759</h6>
+            </div>
+          </div>
+          <div class="h-100 d-inline-block card" id="con-10" onClick="reply_click(this.id)"  style="width: 10rem; float;">
+            <img class="card-img-top" src="2.jpg" alt="Card image cap">
+            <div class="card-body">
+            <h3 class="card-title">Kaushik</h3>
+            <h6 id="num-10" >+1289606456789</h6>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    <script src="bootstrap/js/jquery.min.js"></script>
+
+    <script src="bootstrap/js/bootstrap.js"></script>
+
+    <script>
+    // Download the helper library from https://www.twilio.com/docs/node/install
+    // Your Account Sid and Auth Token from twilio.com/console
+
+    $( "#call" ).click(function() {
+      text_1 = $("#formGroupExampleInput2").val();
+      alert( "Calling "+ text_1 );
+      $("#pbar").toggleClass('progress-bar progress-bar-striped bg-warning');
+      $.get('https://jasmine-swan-1145.twil.io/hi?call='+text_1).done(function(){
+        alert( "Done placing call" );
+      });
+    });
+
+    function change(element){
+      cansole.log("gets called");
+      ele = '#'+element;
+      $(ele).attr('nav-link active' , 'nav-link');
+    }
+
+
+      function reply_click(id){
+        el = '#' + id ;
+      //  el = el+':nth-child(4)' ;
+        text_1  = $(el).find('h6').text();
+        console.log(text_1);
+        $("#formGroupExampleInput2").val( text_1 );
+      }
+
+    </script>
+  </body>
+</html>
