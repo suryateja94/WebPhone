@@ -131,11 +131,16 @@
 
     $( "#call" ).click(function() {
       text_1 = $("#formGroupExampleInput2").val();
+	  if(text_1){
       alert( "Calling "+ text_1 );
       $("#pbar").toggleClass('progress-bar progress-bar-striped bg-warning');
       //$.get(''+text_1).done(function(){
       //  alert( "Done placing call" );
       // }); Insert your Twilio Serverless function
+	  }
+	  else{
+	  alert( " Select contact or enter number before calling");
+	  }
     });
 
     function change(element){
