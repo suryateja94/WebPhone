@@ -133,9 +133,9 @@
       text_1 = $("#formGroupExampleInput2").val();
       alert( "Calling "+ text_1 );
       $("#pbar").toggleClass('progress-bar progress-bar-striped bg-warning');
-      $.get('https://jasmine-swan-1145.twil.io/hi?call='+text_1).done(function(){
-        alert( "Done placing call" );
-      });
+      //$.get(''+text_1).done(function(){
+      //  alert( "Done placing call" );
+      // }); Insert your Twilio Serverless function
     });
 
     function change(element){
